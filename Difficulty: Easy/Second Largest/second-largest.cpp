@@ -13,12 +13,13 @@ class Solution {
         int n = arr.size();
         int lar = arr[0];
         int sec_lar = -1;
+        
         for(int i=0; i<n; i++){
             if(arr[i] > lar){
                 sec_lar = lar;
                 lar = arr[i];
             }
-            if(arr[i] < lar && arr[i] > sec_lar){
+            if(arr[i] > sec_lar && arr[i] < lar){
                 sec_lar = arr[i];
             }
         }
