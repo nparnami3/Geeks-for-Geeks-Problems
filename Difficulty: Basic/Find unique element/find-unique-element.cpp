@@ -9,19 +9,18 @@ class Solution {
   public:
     int findUnique(int k, vector<int>& arr) {
         // code here
-        unordered_map<int,int>mp;
         int n = arr.size();
-        //insert the frequency
-        for(auto it : arr ){
-            mp[it]++;
-        }
+        map<int,int>count;
         
-        //check the odd one out
-        for(auto it : mp){
-            if(it.second != k) return it.first;
+        for(auto it : arr){
+            count[it]++;
+            
         }
-        //else
-        return -1;
+        for(auto it : count){
+            if(it.second != k){
+                return it.first;
+            }
+        }
     }
 };
 
