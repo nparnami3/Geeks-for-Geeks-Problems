@@ -11,21 +11,17 @@ class Solution {
   public:
     pair<int, int> getMinMax(vector<int> arr) {
         // code here
-        pair<int,int>p;
-        int max = arr[0];
-        int min = arr[0];
         int n = arr.size();
+        pair<int,int>res;
+        int mini = arr[0];
+        int maxi = arr[0];
         for(int i = 0; i<n; i++){
-            if(arr[i] > max){
-                max = arr[i];
-            }
-            if(arr[i] < min){
-                min = arr[i];
-            }
+            if(arr[i] > maxi) maxi = arr[i];
+            if(arr[i] < mini) mini = arr[i];
         }
-        p.first = min;
-        p.second = max;
-        return p;
+        res.first = mini;
+        res.second = maxi;
+        return res;
     }
 };
 
