@@ -11,25 +11,28 @@ class Solution {
     // arr: input array
     // k: element to be searched
     bool searchInSorted(vector<int>& arr, int k) {
+
+        // Your code here
         int n = arr.size();
+        int mid;
         int start = 0;
         int end = n-1;
-        
-        
         for(int i=0; i<n; i++){
-            int mid = start - ((start-end)/2);
+            
+            //calculate mid
+            mid = start + ((end-start)/2);
             
             if(k == arr[mid]) return true;
             
-            else if(k > arr[mid]){
-                start = mid+1;
-            }
-            else{
+            else if(k < arr[mid]){
                 end = mid - 1;
+            }
+            
+            else{
+                start = mid + 1;
             }
         }
         return false;
-        // Your code here
     }
 };
 
