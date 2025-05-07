@@ -9,14 +9,19 @@ class Solution {
   public:
     int firstElementKTime(vector<int>& arr, int k) {
         // write code
-        unordered_map<int,int>count;
-        // insert the frequency
+        int n = arr.size();
+        map<int, int>count;
         for(auto num : arr){
+            //insert into map
             count[num]++;
-            if(count[num] == k) return num;
+            
+            //check the frequency
+            if(count[num] == k){
+                return num;
+            }
+            
         }
         return -1;
-        
     }
 };
 
