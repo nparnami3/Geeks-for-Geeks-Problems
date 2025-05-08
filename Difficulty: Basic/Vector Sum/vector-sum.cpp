@@ -14,11 +14,11 @@ using namespace std;
 // Complete the function
 int sumMe(vector<int> arr, int n) {
     int sum = 0;
-    for(int i=0; i<n; i++){
-        sum = sum + arr[i];
+    // Your code here
+    for(int i : arr){
+        sum = sum + i;
     }
     return sum;
-    // Your code here
     // Use accumulate function
 }
 
