@@ -15,11 +15,14 @@ class Solution {
         int n = arr.size();
         int low = 0;
         int high = n-1;
+        
         while(low < high){
-            while(low < high && arr[low] == 0) low++;
-            while(low<high && arr[high] == 1) high--;
-            if(low<high){
-                swap(arr[low],arr[high]);
+            while(low<high && arr[low] == 0) low++;
+            
+            while(low < high && arr[high] == 1) high--;
+            
+            if(low < high){
+                swap(arr[low], arr[high]);
                 low++;
                 high--;
             }
